@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">InventarioMVP</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="main_error_permission_denied">Lo siento, no tienes permiso para ver el inventario.</string>
+    <string name="main_error_server">Error en el servidor, intente más tarde.</string>
+    <string name="item_product_count">Nombre:\nCantidad:</string>
+    <string name="item_product_data">%s \n (x%s)</string>
+    <string name="main_error_remove">"Lo sentimos, usted no tiene permisos suficientes para eliminar un producto. "</string>
+    <string name="main_dialog_remove_title">Eliminando producto</string>
+    <string name="main_dialog_remove_message">Este producto se eliminará de forma permanente, ¿desea continuar?.</string>
+    <string name="main_dialog_remove_Ok">Eliminar</string>
+    <string name="common_dialog_cancel">Cancelar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="addProduct_photo_url">URL de foto</string>
+    <string name="addProduct_name">Nombre</string>
+    <string name="addProduct_hint_quantity">Cantidad</string>
+    <string name="addProduct_messageError_maxValue">"El valor debe ser menor a 1,000. "</string>
+    <string name="addProduct_messageError_addedError">Hubo un error al guardar, vuelva a intentar más tarde.</string>
+    <string name="AddProduct_title_dialog">Añadir Producto</string>
+    <string name="AddProduct_dialog_Ok">Añadir</string>
+    <string name="addPruductMessage_successfully_added">Producto añadido correctamente</string>
+    <string name="addProductSnackBar_action">Ok</string>
+    <string name="common_validate_requiered">Este campo es requerido</string>
+    <string name="common_validate_min_quantity">El valor debe ser mayor a cero.</string>
+</resources>

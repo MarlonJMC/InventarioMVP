@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/item.product.height"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="@dimen/common.item.cornerRadius"
+    >
+   <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgPhoto"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+            />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvData"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/item_product_count"
+                android:textColor="@android:color/white"
+                android:background="@drawable/backgroung_item_product_text"
+                android:padding="@dimen/item.product.padding"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+ <!--   <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:orientation="vertical"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.6"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvData"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:text="@string/item_product_count"
+            android:textColor="@android:color/white"
+            android:background="@drawable/backgroung_item_product_text"
+            />
+
+
+    </LinearLayout>-->
+
+    </androidx.cardview.widget.CardView>

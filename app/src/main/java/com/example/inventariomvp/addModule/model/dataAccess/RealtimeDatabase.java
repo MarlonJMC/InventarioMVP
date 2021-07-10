@@ -29,11 +29,20 @@ public class RealtimeDatabase {
                 if(error==null){
                     callBack.onSuccess();
                 }else{
-                    if(error.getCode()==DatabaseError.PERMISSION_DENIED){
+                    switch (error.getCode()){
+                        case DatabaseError.PERMISSION_DENIED:
+                            callBack.onError(AddProductEvent.ERROR_MAX_VALUE,
+                                    R.string.addProduct_messageError_maxValue);
+                            break;
+                        default:
+                            callBack.onError(AddProductEvent.ERROR_SERVER,
+                                    R.string.addProduct_messageError_addedError);
+                    }
+/*                    if(error.getCode()==DatabaseError.PERMISSION_DENIED){
                         callBack.onError(AddProductEvent.ERROR_MAX_VALUE, R.string.addProduct_messageError_maxValue);
                     }else{
                         callBack.onError(AddProductEvent.ERROR_SERVER, R.string.addProduct_messageError_addedError);
-                    }
+                    }*/
                 }
             }
         });

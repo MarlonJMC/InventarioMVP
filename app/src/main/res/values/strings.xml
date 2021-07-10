@@ -25,4 +25,8 @@
     <string name="addProductSnackBar_action">Ok</string>
     <string name="common_validate_requiered">Este campo es requerido</string>
     <string name="common_validate_min_quantity">El valor debe ser mayor a cero.</string>
+    <string name="detailProduct_btnSave">Guardar Cambios</string>
+    <string name="detailProduct_update_successfully">Producto actualizado exitosamente. Desea volver al principal?</string>
+    <string name="detailProduct_snackBar_Action">Ir al principal</string>
+    <string name="detailProduct_update_error">Error al actualizar, revise la cantidad o intente más tarde.</string>
 </resources>

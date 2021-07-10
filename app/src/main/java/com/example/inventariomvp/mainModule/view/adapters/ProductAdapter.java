@@ -17,6 +17,7 @@ import com.example.inventariomvp.R;
 import com.example.inventariomvp.common.pojo.Product;
 import com.example.inventariomvp.databinding.ItemProductBinding;
 
+
 import java.util.List;
 
 
@@ -36,7 +37,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
-        binding = ItemProductBinding.inflate(LayoutInflater.from(context));
+        binding = ItemProductBinding.inflate(LayoutInflater.from(context),parent,false);
 //        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product, parent, false);
         View view=binding.getRoot();
         return new ViewHolder(view);
@@ -119,4 +120,5 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             });
         }
     }
+
 }

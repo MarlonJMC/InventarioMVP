@@ -3,6 +3,7 @@ package com.example.inventariomvp.mainModule.view;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,12 +14,11 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toast;
-
 import com.example.inventariomvp.R;
 import com.example.inventariomvp.addModule.view.AddProduct_Fragment;
 import com.example.inventariomvp.common.pojo.Product;
 import com.example.inventariomvp.databinding.ActivityMainBinding;
+import com.example.inventariomvp.detailModule.view.DetailFragment;
 import com.example.inventariomvp.mainModule.presenter.MainPresenter;
 import com.example.inventariomvp.mainModule.presenter.MainPresenterClass;
 import com.example.inventariomvp.mainModule.view.adapters.OnItemClickListener;
@@ -29,6 +29,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements OnItemClickListener, MainView {
 
+    private static final String FRAGMENTDETAIL = DetailFragment.class.getName();
     private ActivityMainBinding binding;
     private MainPresenter mainPresenter;
     private ProductAdapter mProductAdapter;
@@ -125,15 +126,34 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     }
 
     @Override
-    public void onItemClick(Product product) {
-        Toast.makeText(this, "OnItemClick event", Toast.LENGTH_SHORT).show();
+    public void onItemClick(Product product){
+
+        Bundle arguments = new Bundle();
+        arguments.putString(Product.ID, product.getId());
+        arguments.putString(Product.NAME, product.getName());
+        arguments.putInt(Product.QUANTITY, product.getQuantity());
+        arguments.putString(Product.PHOTOURL, product.getPhotoURL());
+
+/*        getSupportFragmentManager().beginTransaction().add(R.id.contentMain,
+                DetailFragment.instantiate(this, FRAGMENTDETAIL, arguments),
+                FRAGMENTDETAIL).addToBackStack(null).commit();*/
+        DetailFragment newFragment = new DetailFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+// Replace whatever is in the fragment_container view with this fragment,
+// and add the transaction to the back stack
+        transaction.replace(R.id.layoutConstraint, newFragment);
+        newFragment.setArguments(arguments);
+        transaction.addToBackStack(null);
+// Commit the transaction
+        transaction.commit();
     }
 
     @Override
     public void onLongItemClick(Product product) { //Click largo para eliminar un elemento.
         Vibrator vibrator= (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
         if(vibrator!=null){
-            vibrator.vibrate(60);
+            vibrator.vibrate(90);
         }
 
         new AlertDialog.Builder(this)

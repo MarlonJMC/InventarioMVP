@@ -49,7 +49,7 @@ public class AddProductPresenterClass implements AddProductPresenter {
                 mView.productAdded();
             }break;
               case AddProductEvent.ERROR_MAX_VALUE:{
-                mView.showError(event.getResMsg());
+                mView.maxValueError(event.getResMsg());
             }break;
               case AddProductEvent.ERROR_SERVER:{
                   mView.showError(event.getResMsg());

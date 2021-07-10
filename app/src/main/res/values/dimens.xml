@@ -1,9 +1,10 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="item.product.height">160dp</dimen>
+    <dimen name="item.product.height">180dp</dimen>
     <dimen name="common.item.cornerRadius">4dp</dimen>
     <dimen name="item.product.padding">4dp</dimen>
     <dimen name="add_padding_main">16dp</dimen>
     <dimen name="add_photo_size_width">96dp</dimen>
     <dimen name="addProduct_photo_size_height">80dp</dimen>
+    <dimen name="ad_btn_minWidth">88dp</dimen>
 </resources>

@@ -200,7 +200,7 @@ public class AddProduct_Fragment extends DialogFragment implements DialogInterfa
 
     @Override
     public void maxValueError(int resMsg) {
-        binding.etQuantity.setError(getContext().getString(resMsg));
+        binding.etQuantity.setError(getString(resMsg));
         binding.etQuantity.requestFocus();
     }
 }
